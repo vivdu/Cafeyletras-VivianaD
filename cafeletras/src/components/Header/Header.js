@@ -5,22 +5,22 @@ function Header(){
     return(
 //caracteristicas del componente/
 <header>
-<a href="index.html" class="m-logo"><img src={Logo}/></a>
-        <div class="search">
-            <div class="search_wrap">
-                <div class="search_box">
-                    <input type="text" class="input" placeholder="Buscar"/>
-                    <div class="btn btn_common">
-                        <i class="fas fa-search"></i>
+<a href="index.html" className="m-logo"><img src={Logo}/></a>
+        <div className="search">
+            <div className="search_wrap">
+                <div className="search_box">
+                    <input type="text" className="input" placeholder="Buscar"/>
+                    <div className="btn btn_common">
+                        <i className="fas fa-search"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div>
-            <a class="b-shop" href="./pages/compras.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a className="b-shop" href="./pages/compras.html"><i className="fa-solid fa-cart-shopping"></i></a>
             <input type="checkbox" id="menu-bar" hidden/>
-            <label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
-        <nav class="m-navbar">
+            <label htmlFor="menu-bar"><i className="fa-solid fa-bars"></i></label>
+        <nav className="m-navbar">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="./pages/login.html">Login</a></li>

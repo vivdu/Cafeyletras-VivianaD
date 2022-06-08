@@ -6,13 +6,13 @@ function Navbar() {
     return(
 //caracteristicas del componente/
 <div id="d-header-one">
-    <div class="d-header-one-nav">
+    <div className="d-header-one-nav">
     <img src={Logo}/>
-    <a href="./pages/login.html"><i class="fa-solid fa-user"></i></a>
-    <a class="b-shop" href="./pages/compras.html"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="./pages/login.html"><i className="fa-solid fa-user"></i></a>
+    <a className="b-shop" href="./pages/compras.html"><i className="fa-solid fa-cart-shopping"></i></a>
 </div>
     <div id="d-header-second">
-        <div class="d-header-second-nav">
+        <div className="d-header-second-nav">
         <ul>
             <li><a href="index.html">Inicio</a></li>
                     <li><a href="./pages/login.html">Login</a></li>
@@ -27,12 +27,12 @@ function Navbar() {
                     <li><a href="./pages/actividades.html">Actividades</a></li>
         </ul>
         </div>
-        <div class="search2">
-            <div class="search_wrap2">
-                <div class="search_box2">
-                    <input type="text" class="input" placeholder="Buscar"/>
-                    <div class="btn btn_common2">
-                        <i class="fas fa-search"></i>
+        <div className="search2">
+            <div className="search_wrap2">
+                <div className="search_box2">
+                    <input type="text" className="input" placeholder="Buscar"/>
+                    <div className="btn btn_common2">
+                        <i className="fas fa-search"></i>
                     </div>
                 </div>
             </div>

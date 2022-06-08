@@ -1,19 +1,99 @@
+import Input from './Inputs';
+import './CompraCss.css';
 import React from 'react';
-import CompraCss from './CompraCss.css';
+import { useState } from 'react';
+import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './formcss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
-function CompraDos() {
-    return (
-        <div>
-        <article class="shop-box">
-        <form class="form-shop" name="form" action="compras-b.html" method="get" target="_self"
-                autocomplete="autocomplete">
-                <h2>Dirección de envío</h2>
-                <hr/>
-                <div class="form-box">
-                    <div class="form-item-first">
-                        <label for="ciudad1" class="label">Departamento</label>
-                        <select name="ciudad1" id="ciudad1">
-                            <option value="0" selected>Elige un departamento</option>
+const FormCompra = () => {
+	const [lugar, cambiarLugar] = useState({campo: '', valido: null});
+	const [direccion, cambiarDireccion] = useState({campo: '', valido: null});
+	const [postal, cambiarPostal] = useState({campo: '', valido: null});
+	const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
+	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
+	const [apellido, cambiarApellido] = useState({campo: '', valido: null});
+	const [password, cambiarPassword] = useState({campo: '', valido: null});
+	const [password2, cambiarPassword2] = useState({campo: '', valido: null});
+	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
+	const [telefono, cambiarTelefono] = useState({campo: '', valido: null});
+	const [terminos, cambiarTerminos] = useState(false);
+	const [formularioValido, cambiarFormularioValido] = useState(null);
+
+	const expresiones = {
+		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+		lugar: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		direccion: /^[#a-zA-Z0-9\s_.+-]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		postal: /^\d{5,10}$/, // 7 a 14 numeros.
+		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		password: /^.{4,12}$/, // 4 a 12 digitos.
+		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	}
+
+	const validarPassword2 = () => {
+		if(password.campo.length > 0){
+			if(password.campo !== password2.campo){
+				cambiarPassword2((prevState) => {
+					return {...prevState, valido: 'false'}
+				});
+			} else {
+				cambiarPassword2((prevState) => {
+					return {...prevState, valido: 'true'}
+				});
+			}
+		}
+	}
+
+	const onChangeTerminos = (e) => {
+		cambiarTerminos(e.target.checked);
+	}
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+
+		if(
+			usuario.valido === 'true' &&
+			nombre.valido === 'true' &&
+			apellido.valido === 'true' &&
+			password.valido === 'true' &&
+			password2.valido === 'true' &&
+			correo.valido === 'true' &&
+			telefono.valido === 'true' &&
+			lugar.valido === 'true' &&
+			direccion.valido === 'true' &&
+			terminos
+		){
+			cambiarFormularioValido(true);
+			cambiarUsuario({campo: '', valido: ''});
+			cambiarNombre({campo: '', valido: null});
+			cambiarPassword({campo: '', valido: null});
+			cambiarPassword2({campo: '', valido: 'null'});
+			cambiarCorreo({campo: '', valido: null});
+			cambiarTelefono({campo: '', valido: null});
+
+			// ... 
+		} else {
+			cambiarFormularioValido(false);
+		}
+	}
+
+	return (
+		<main>
+			<div className="shop-box-second">
+			<h2>Información de contacto</h2>
+			<h3>¿Ya tienes una cuenta? Inicia sesión</h3>
+			<input type="email" placeholder='Ingrese su correo'></input>
+				<button type="submit">Enviar</button>
+			</div>
+
+				
+				<div className="shop-title"><h1>Creación de usuario y datos de envío</h1></div>
+			<Formulario action="" onSubmit={onSubmit}>
+				<div>
+				<select name="ciudad1" id="shop-place">
+                            <option value="0" defaultValue>Elige un departamento</option>
                             <optgroup label="Centro">
                                 <option value="1">Distrito Capital</option>
                                 <option value="2">Cundinamarca</option>
@@ -56,76 +136,140 @@ function CompraDos() {
                                 <option value="31">Guainía</option>
                             </optgroup>
                         </select>
-                    </div>
-                    </div>
-                    <div class="form-item">
-                    <input name="name" id="name" type="text" placeholder=" Nombres"/></div>
-                    <div class="form-item">
-                        <input name="name" id="name" type="text" placeholder=" Apellidos"/></div>
-                        <div class="form-item">
-                            <input name="city" id="city" type="text" placeholder=" Ciudad - municipio"/></div>
-                        <div class="form-item">
-                    <input name="adress" id="adress" type="text" placeholder=" Dirección"/></div>
-                    <div class="form-item">
-                        <input name="adress-a" id="adress-a" type="text" placeholder=" Detalles de dirección"/></div>
-                        <div class="form-item">
-                            <input name="code" id="code" type="text" placeholder=" Código postal"/></div>
-                    <div class="form-item">
-                    <input name="telephone" id="telephone" type="text" placeholder=" Número contacto"/></div>
-                    <div class="form-item">
-                    <input type="email" name="email" id="email" placeholder=" Ingrese su correo electrónico"/></div>
-                    <div class="form-item">       
-                </div>
-            <a href="compras-b.html"><button class="shop-button">Ir a pasarela de pago</button></a>
-
-            </form>
-        </article>
-        <article class="shop-box shop-box-second">
-    
-        <div class="shop-cart-second">
-            <img src="../utils/img/librocompra.svg"/>
-            <div class="scs"><h3>Misión Economía</h3>
-            <p>Mariana Mazzucato</p></div>
-            <h3>$40.000</h3>
-        </div>
-        <hr/>
-        <div class="shop-item-second">
-            <input class="gift-card" type="gift-card" name="gift-card" id="gift-card" placeholder=" Tarjeta de regalo"/>
-            <button class="single-button">Usar</button>
-        </div>
-        <hr/>
-        <div class="shop-item-second">
-            <h3>SUBTOTAL</h3>
-            <h2>$40.000</h2>
-        </div>
-        <div class="shop-item-second">
-            <h3>Envío</h3>
-            <h2>$10.000</h2>
-            
-        </div>
-            <hr/>
-        <div class="shop-item-second">
-            <h2>TOTAL</h2>
-            <h2>$50.000</h2>
-        </div>
-    </article>
-    <section class="background-aviso">
-        <article class="cont-aviso">
-            <div><i class="fa-solid fa-circle-check"></i>
-            <h4>Pedido finalizado</h4></div>
-            <p>Se enviará a tu correo la información del pedido, así como posibles cambios</p>
-            <article class="cont-aviso-boton">
-                <button class="aviso-a">
-                    <a href="compras-a.html">Continuar</a>
-                </button>
-                <button class="aviso-b">
-                    <a href="../index.html">Ir a inicio</a>
-                </button>
-            </article>
-        </article>
-    </section>
-    </div>
-    )
+						</div>
+						<div>
+						<select name="ciudad1" id="shop-place">
+                            <option value="0" defaultValue>Tipo de zona</option>
+                            <option value="1" >Urbana - ciudad capital</option>
+                            <option value="2" >Urbana - municipio</option>
+                            <option value="3" >Rural</option>
+							</select>
+						</div>
+				<Input
+					estado={lugar}
+					cambiarEstado={cambiarLugar}
+					tipo="text"
+					label="Ciudad - Municipio"
+					placeholder="Ubicación"
+					name="usuario"
+					leyendaError="La ubicación solo puede contener letras, guiones y espacios."
+					expresionRegular={expresiones.lugar}
+				/>
+				<Input
+					estado={direccion}
+					cambiarEstado={cambiarDireccion}
+					tipo="text"
+					label="Dirección de envío"
+					placeholder="Dirección"
+					name="usuario"
+					leyendaError="La dirección solo puede contener letras, guiones y espacios."
+					expresionRegular={expresiones.direccion}
+				/>
+				<Input
+					estado={postal}
+					cambiarEstado={cambiarPostal}
+					tipo="text"
+					label="Código postal"
+					placeholder="000000"
+					name="postal"
+					leyendaError="Ingrese un código de 6 a 10 dígitos"
+					expresionRegular={expresiones.telefpostalono}
+				/>
+				<Input
+					estado={usuario}
+					cambiarEstado={cambiarUsuario}
+					tipo="text"
+					label="Nombre de usuario"
+					placeholder="Usuario"
+					name="usuario"
+					leyendaError="El usuario solo puede contener letras, guiones y espacios."
+					expresionRegular={expresiones.usuario}
+				/>
+				<Input
+					estado={nombre}
+					cambiarEstado={cambiarNombre}
+					tipo="text"
+					label="Nombre"
+					placeholder="Nombre del comprador"
+					name="usuario"
+					leyendaError="El nombre solo puede contener letras y espacios."
+					expresionRegular={expresiones.nombre}
+				/>
+				<Input
+					estado={apellido}
+					cambiarEstado={cambiarApellido}
+					tipo="text"
+					label="Apellido"
+					placeholder="Apellido"
+					name="usuario"
+					leyendaError="El apellido solo puede contener letras y espacios."
+					expresionRegular={expresiones.apellido}
+				/>
+				<Input
+					estado={telefono}
+					cambiarEstado={cambiarTelefono}
+					tipo="text"
+					label="Teléfono"
+					placeholder="Fijo o celular"
+					name="telefono"
+					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
+					expresionRegular={expresiones.telefono}
+				/>
+				<Input
+					estado={correo}
+					cambiarEstado={cambiarCorreo}
+					tipo="email"
+					label="Correo Electrónico"
+					placeholder="ejemplo@correo.com"
+					name="correo"
+					leyendaError="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
+					expresionRegular={expresiones.correo}
+				/>
+				<Input
+					estado={password}
+					cambiarEstado={cambiarPassword}
+					tipo="password"
+					label="Contraseña"
+					name="password1"
+					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
+					expresionRegular={expresiones.password}
+				/>
+				<Input
+					estado={password2}
+					cambiarEstado={cambiarPassword2}
+					tipo="password"
+					label="Repetir Contraseña"
+					name="password2"
+					leyendaError="Ambas contraseñas deben ser iguales."
+					funcion={validarPassword2}
+				/>
+				
+				
+				<ContenedorTerminos>
+					<Label>
+						<input 
+							type="checkbox"
+							name="terminos"
+							id="terminos"
+							checked={terminos} 
+							onChange={onChangeTerminos}
+						/>
+						Acepto la política de tratamiento de datos personales, términos y condiciones 
+					</Label>
+				</ContenedorTerminos>
+				{formularioValido === false && <MensajeError>
+					<p>
+						<FontAwesomeIcon icon={faExclamationTriangle}/>
+						<b>Error:</b> Por favor rellena el formulario correctamente.
+					</p>
+				</MensajeError>}
+				<ContenedorBotonCentrado>
+					<Boton type="submit">Enviar</Boton>
+					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
+				</ContenedorBotonCentrado>
+			</Formulario>
+		</main>
+	);
 }
-
-export default CompraDos;
+ 
+export default FormCompra;

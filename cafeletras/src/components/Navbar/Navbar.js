@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 import Logo from './logotipo.svg'
 
@@ -9,7 +10,7 @@ function Navbar() {
     <div className="d-header-one-nav">
     <img src={Logo}/>
     <a href="./pages/login.html"><i className="fa-solid fa-user"></i></a>
-    <a className="b-shop" href="./pages/compras.html"><i className="fa-solid fa-cart-shopping"></i></a>
+    <a className="b-shop"><Link to="/compras1"> <i className="fa-solid fa-cart-shopping"></i></Link></a>
 </div>
     <div id="d-header-second">
         <div className="d-header-second-nav">

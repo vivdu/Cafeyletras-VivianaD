@@ -85,7 +85,7 @@ const FormCompra = () => {
 			<h2>Información de contacto</h2>
 			<h3>¿Ya tienes una cuenta? Inicia sesión</h3>
 			<input type="email" placeholder='Ingrese su correo'></input>
-				<button type="submit">Enviar</button>
+				<button type="submit" className='shop-button'>Enviar</button>
 			</div>
 
 				

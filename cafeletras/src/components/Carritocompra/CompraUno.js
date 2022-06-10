@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CompraCss.css';
 import Librocompra from './librocompra.svg';
 
@@ -23,7 +24,7 @@ function CompraUno(){
         <div className="shop-item">
             <div><h3>SUBTOTAL</h3><h2>$40.000</h2></div>
             <p>Los códigos de descuento, los costes de envío y los impuestos se añaden durante el pago.</p>
-            <a href="compras-a.html"><button className="shop-button">FINALIZAR PEDIDO</button></a>
+            <Link to="/compras2"><button className="shop-button">FINALIZAR PEDIDO</button></Link>
         </div>
         
         </section>

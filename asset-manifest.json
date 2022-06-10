@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Cafeyletras-VivianaD/static/css/main.2da9208c.css",
+    "main.js": "/Cafeyletras-VivianaD/static/js/main.1245e33c.js",
+    "static/media/librocompra.svg": "/Cafeyletras-VivianaD/static/media/librocompra.bc50a39dc22b481a9ed6a1c55920a8c0.svg",
+    "static/media/logofooter.svg": "/Cafeyletras-VivianaD/static/media/logofooter.a8a33a6e5f7cb39218bc1543f834292e.svg",
+    "static/media/logotipo.svg": "/Cafeyletras-VivianaD/static/media/logotipo.26f289431362b7a069a55c61aa865402.svg",
+    "index.html": "/Cafeyletras-VivianaD/index.html",
+    "static/media/logo.svg": "/Cafeyletras-VivianaD/static/media/logo.50a732524c124e4826311a1eba2e4903.svg",
+    "main.2da9208c.css.map": "/Cafeyletras-VivianaD/static/css/main.2da9208c.css.map",
+    "main.1245e33c.js.map": "/Cafeyletras-VivianaD/static/js/main.1245e33c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2da9208c.css",
+    "static/js/main.1245e33c.js"
+  ]
+}

@@ -1,0 +1,32 @@
+.product-list {
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-list__item {
+    text-align: center;
+    border-radius: 10px;
+    list-style: none;
+    max-width: fit-content;
+    width: 100%;
+    height: fit-content;
+    margin: 0.5rem;
+}
+
+.shop-list h2 {
+    text-align: center;
+    font-weight: 700;
+    color: var(--cafe);
+    padding: 1.5rem;
+}
+@media screen and (max-width: 500px){
+    .product-list{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+    

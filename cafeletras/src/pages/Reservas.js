@@ -2,17 +2,16 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import CompraTres from '../components/Carritocompra/CompraTres';
-import FormCompra from '../components/Carritocompra/CompraDos';
-function Compras2(){
+import FormReserva from '../components/Reservas/Form';
+
+function Reservas(){
     return (
         <main>
         <Header />
         <Navbar />
-        <FormCompra />
-        <CompraTres />
+        <FormReserva />
         <Footer />
         </main>
     )
 }
-export default Compras2;
+export default Reservas;

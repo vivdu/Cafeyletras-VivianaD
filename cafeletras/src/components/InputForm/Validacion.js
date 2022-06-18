@@ -5,8 +5,9 @@ import { useState } from 'react';
 import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './formcss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-const FormCompra = () => {
+const FormShop = () => {
 	const [lugar, cambiarLugar] = useState({campo: '', valido: null});
 	const [direccion, cambiarDireccion] = useState({campo: '', valido: null});
 	const [postal, cambiarPostal] = useState({campo: '', valido: null});
@@ -84,12 +85,13 @@ const FormCompra = () => {
 			<div className="shop-box-second">
 			<h2>Información de contacto</h2>
 			<h3>¿Ya tienes una cuenta? Inicia sesión</h3>
-			<input type="email" placeholder='Ingrese su correo'></input>
-				<button type="submit" className='shop-button'>Enviar</button>
+			<div className='shop-item'>
+			<input type="email" placeholder='Ingrese su correo' className='email-input'></input>
+				<button type="submit" className='submit-button'>Iniciar sesión</button></div>
 			</div>
 
 				
-				<div className="shop-title"><h1>Creación de usuario y datos de envío</h1></div>
+				<div className="shop-title"><h2><i class="fa-solid fa-circle-user"></i>  Creación de usuario y datos de envío</h2></div>
 			<Formulario action="" onSubmit={onSubmit}>
 				<div>
 				<select name="ciudad1" id="shop-place">
@@ -264,12 +266,12 @@ const FormCompra = () => {
 					</p>
 				</MensajeError>}
 				<ContenedorBotonCentrado>
-					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
+				<div className='button-cart'><button className="submit-button">Guardar datos</button></div>
+					{formularioValido === true && <Link to="pago"><MensajeExito>Formulario enviado exitosamente!</MensajeExito></Link>}
 				</ContenedorBotonCentrado>
 			</Formulario>
 		</main>
 	);
 }
  
-export default FormCompra;
+export default FormShop;

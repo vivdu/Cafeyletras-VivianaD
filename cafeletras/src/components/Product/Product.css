@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --crema:  rgb(255, 254, 242);
+    --beige: #F1D6AB;
+    --rosa: #E2C2B9;
+    --verdeclaro: #B4C6A6;
+    --verdeoscuro: #38470B;
+    --cafe: #41341F;
+    --cafeclaro: #A0855B;
+}
+.product-box {
+    background: var(--crema);
+    border-radius: 10px;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.4s ease;
+    margin: 1rem 0 0 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.btn-red{
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    width: 100%;
+    font-weight: 600;
+    background-color: var(--rosa);
+    color: red;
+    border: 2px solid var(--rosa);
+    border-radius: 10px;
+}
+
+.btn-green{
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 100%;
+    font-weight: 600;
+    background-color: var(--verdeoscuro);
+    color: var(--crema);
+    border: 2px solid var(--cafe);
+    border-radius: 10px;
+}
+.btn-green:hover {
+    background-color: var(--cafeclaro);
+    color: var(--crema);
+    border: 2px solid var(--cafe);
+}

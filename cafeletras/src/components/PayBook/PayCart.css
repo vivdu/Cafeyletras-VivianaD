@@ -1,0 +1,13 @@
+.select-box{
+    display: flex;
+}
+#pay-select{
+    margin: 2rem 1rem 0.5rem 1rem;
+}
+.center-text {
+    text-align: center;
+    padding: 3rem;
+}
+.fa-money-check-dollar {
+    color: var(--crema);
+}

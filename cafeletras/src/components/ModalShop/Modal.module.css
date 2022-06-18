@@ -1,0 +1,102 @@
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .modal {
+    width: 300px;
+    height: 250px;
+    background-color: var(--crema);
+    z-index: 10;
+    border-radius: 5px;
+  }
+  
+.modalHeader {
+    padding: 1rem;
+    overflow: hidden;
+  }
+  
+.heading {
+    margin: 0;
+    padding: 10px;
+    color: var(--cafe);
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+  }
+  
+  .modalContent {
+    padding: 10px;
+    color: var(--cafe);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modalActions {
+    position: absolute;
+    bottom: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .actionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+   
+.deleteBtn {
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    color: var(--crema);
+    background: var(--cafeclaro);
+    transition: all 0.25s ease;
+  }
+  
+  .deleteBtn:hover {
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.6);
+    background:var(--cafe);
+  }
+  
+  .cancelBtn {
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    color: var(--cafe);
+    background: var(--rosa);
+    transition: all 0.25s ease;
+  }
+  
+  .cancelBtn:hover {
+    box-shadow: none;
+    transform: none;
+    background-color: var(--verdeclaro);
+  }
+.modal i{
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+  

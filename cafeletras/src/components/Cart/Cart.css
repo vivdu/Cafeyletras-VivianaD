@@ -1,0 +1,77 @@
+.cart__body {
+  margin-bottom: 0.7em;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--rosa);
+  font-size: large;
+  font-weight: bold;
+  color: var(--verdeoscuro);
+}
+
+.cart-item__name {
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+.cart-item__price {
+  font-weight: bold;
+}
+
+.cart__total {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.1em;
+  text-align: right;
+}
+.btn-xs {
+  margin: 2rem;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--rosa);
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 50%;
+  border: 3px solid var(--rosa);
+}
+.btn-xs i{
+  color: red;
+}
+.btn-xs:hover{
+  cursor: pointer;
+}
+.cart-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart-panel button{
+  margin: 0 auto;
+}
+.button-cart{
+  text-align: center;
+}
+.submit-button {
+  cursor: pointer;
+  margin: 2rem auto 0 auto;
+  padding: 1rem 4rem;
+  max-width: 300px;
+  width: 100%;
+  font-weight: bolder;
+  font-size: large;
+  background-color: var(--crema);
+  color: var(--verdeoscuro);
+  border-radius: 5px;
+  border: 3px solid var(--verdeoscuro);
+
+}
+.submit-button:hover {
+  background-color: var(--verdeoscuro);
+  color: var(--crema);
+
+}

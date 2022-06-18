@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const colores = {
 	borde: "#A0855B",
-	error: "#41341F",
+	error: "#FF0000",
 	exito: "#B4C6A6"
 }
 
@@ -141,8 +141,13 @@ const Boton = styled.button`
 `;
 
 const MensajeExito = styled.p`
-	font-size: 14px;
-	color: ${colores.exito};
+	margin-top:1rem;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	background-color: ${colores.exito};
+	height: 3rem;
+	padding: 1rem;
 `;
 
 const MensajeError = styled.div`
